@@ -66,6 +66,19 @@ window.addEventListener('scroll', () => {
   }
 });
 
+/* ===== Gallery "see more" ===== */
+const galleriMore = document.getElementById('galleriMore');
+
+if (galleriMore) {
+  galleriMore.addEventListener('click', () => {
+    document.querySelectorAll('.galleri__item--hidden').forEach(item => {
+      item.classList.remove('galleri__item--hidden', 'reveal');
+      gsap.set(item, { opacity: 1, y: 0 });
+    });
+    galleriMore.remove();
+  });
+}
+
 /* ===== Gallery lightbox ===== */
 const galleryTriggers = Array.from(document.querySelectorAll('.galleri__trigger'));
 
